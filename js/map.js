@@ -215,15 +215,15 @@ var map = new L.Map('mapid',
 		closePopupOnClick: true
 	});
 
-var CartoDB_Positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://cartodb.com/attributions">CartoDB</a>',
   subdomains: 'abcd',
   maxZoom: 19
 });
 map.addLayer(CartoDB_Positron);
 
-sendGetRequest("//" + window.location.host + "/geojson/topoversion", function(version) {
-	getJson("//" + window.location.host + "/static/topo.json?v=" + version, 
+sendGetRequest("https://" + window.location.host + "/geojson/topoversion/", function(version) {
+	getJson("https://" + window.location.host + "/static/topo.json?v=" + version, 
 		function(data) {
 			topojson = L.topoJson(data, {
 				style: regionStyle,
@@ -232,7 +232,7 @@ sendGetRequest("//" + window.location.host + "/geojson/topoversion", function(ve
 			});
 			topojson.addTo(map);
 
-			getJson("//"+ window.location.host + "/geojson/", function(data) {
+			getJson("https://"+ window.location.host + "/geojson/", function(data) {
 				posts = data;
 			});
 		});
