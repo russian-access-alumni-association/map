@@ -1,0 +1,143 @@
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: 'PT Sans', sans-serif;
+}
+
+#header-wrapper {
+	position: absolute;
+	min-width: 250px;
+	height: 60px;
+	z-index: 998;
+	background-color: rgb(12, 125, 138);
+	padding: 10px 20px 10px 20px;
+	border-radius: 0 0 10px 0;
+	box-shadow: 0 0 10px rgba(0,0,0,0.7)
+}
+
+#header-title {
+	font-size: 32px;
+	color: rgb(188, 200, 212);
+}
+
+#header-subtitle {
+	color: rgb(18, 19, 20);
+}
+
+#main-wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+
+#map-wrapper {
+	flex: 1 1 auto;
+}
+
+#mapid { 
+	height: 100%;
+}
+
+.capital-tooltip {
+	background-color: rgba(0, 0, 0, 0);
+	border: 0px;
+	box-shadow: none;
+	color: #666;
+	font-weight: bold;
+	text-shadow: 0px 0px 4px #00D7FF;
+}
+
+.capital-tooltip-selected {
+	background-color: rgba(0, 0, 0, 0);
+	border: 0px;
+	box-shadow: none;
+	color: #ee0000;
+	font-weight: bold;
+	text-shadow: 0px 0px 5px #00D7FF;
+}
+
+.leaflet-tooltip-left {
+	margin-left: 0px; 
+}
+
+
+.leaflet-tooltip-right {
+	margin-left: 2px; 
+}
+
+.leaflet-tooltip-top::before, .leaflet-tooltip-bottom::before, .leaflet-tooltip-left::before, .leaflet-tooltip-right::before {
+	border: 0px !important;
+	margin: 0px !important;
+}
+
+.leaflet-top.leaflet-left {
+	margin-top: 100px;
+}
+
+#side-wrapper {
+	height: 100%;
+	width: 0px;
+	z-index: 999;
+	background-color: #fff;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	transition: width 0.2s ease-out;
+}
+
+#side-content {
+	margin-top: 36px;
+	min-height: 20px;
+}
+
+.side-top-panel {	
+	display: flex;
+	align-items: center;
+	position: fixed;
+	width: inherit;
+	height: 34px;
+	background-color: #DDD;
+	background-image: -webkit-linear-gradient(top, #f0f0f0, #c9c9c9);
+	background-image: -moz-linear-gradient(top, #f0f0f0, #c9c9c9);
+	background-image: -ms-linear-gradient(top, #f0f0f0, #c9c9c9);
+	background-image: -o-linear-gradient(top, #f0f0f0, #c9c9c9);
+	background-image: linear-gradient(to bottom, #f0f0f0, #c9c9c9);
+	border-bottom: 1px solid #AAA;
+	font-weight: bold;
+	font-size: 12px;
+	color: #888;
+}
+
+#side-top-panel-close {
+	display: block;
+	margin-right: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-left: 1px solid #AAA;
+	border-right: 2px solid #AAA;
+	height: inherit;
+}
+
+#side-top-panel-close:hover {
+	background-image: -webkit-linear-gradient(top, #d1d1d1, #9c999c);
+	background-image: -moz-linear-gradient(top, #d1d1d1, #9c999c);
+	background-image: -ms-linear-gradient(top, #d1d1d1, #9c999c);
+	background-image: -o-linear-gradient(top, #d1d1d1, #9c999c);
+	background-image: linear-gradient(to bottom, #d1d1d1, #9c999c);
+}
+
+#side-top-panel-close:active {
+	background-image: -webkit-linear-gradient(top, #c1c1c1, #9c999c);
+	background-image: -moz-linear-gradient(top, #c1c1c1, #9c999c);
+	background-image: -ms-linear-gradient(top, #c1c1c1, #9c999c);
+	background-image: -o-linear-gradient(top, #c1c1c1, #9c999c);
+	background-image: linear-gradient(to bottom, #c1c1c1, #9c999c);	
+}
+
+#side-top-panel-close > img {
+	margin-top: 6px;
+}
